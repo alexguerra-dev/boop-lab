@@ -4,13 +4,14 @@
  * you can if you want to.
  */
 
-const guardrailsErrors = [];
+const guardrailsErrors = []
 
 const displayObtrusiveErrors = (errors) => {
-    if (errors.length <= 0) return;
+    if (errors.length <= 0) return
 
-    const column = document.createElement('div');
-    column.setAttribute('style', 
+    const column = document.createElement('div')
+    column.setAttribute(
+        'style',
         `max-width: 560px;
         display: flex;
         justify-content: center;
@@ -20,12 +21,12 @@ const displayObtrusiveErrors = (errors) => {
         position: absolute;
         top: 0;
         flex-direction: column;
-        `
-    );
+        `,
+    )
 
-    errors.forEach(error => {
-        const { header, description } = error;
-        const container = document.createElement('div');
+    errors.forEach((error) => {
+        const { header, description } = error
+        const container = document.createElement('div')
         container.setAttribute(
             'style',
             `border-radius: 5px;
@@ -35,34 +36,29 @@ const displayObtrusiveErrors = (errors) => {
             margin-bottom: 8px;
             background-color: white;
             background: #EA5050;
-            color: white;`
-        );
-        const h1 = document.createElement('h1');
-        h1.appendChild(document.createTextNode(header));
+            color: white;`,
+        )
+        const h1 = document.createElement('h1')
+        h1.appendChild(document.createTextNode(header))
         h1.setAttribute(
-            'style', 
+            'style',
             `margin-bottom: 15px;
             border-bottom: dashed 1px gray;
-            padding-bottom: 15px;`
-        );
-        const explainer = document.createElement('p');
-        explainer.appendChild(
-            document.createTextNode(
-                description
-            )
-        );
-    
-        column.appendChild(container);
-        container.appendChild(h1);
-        container.appendChild(explainer);
-    });
+            padding-bottom: 15px;`,
+        )
+        const explainer = document.createElement('p')
+        explainer.appendChild(document.createTextNode(description))
 
-    document.getElementById("rnbo-root").appendChild(column);
+        column.appendChild(container)
+        container.appendChild(h1)
+        container.appendChild(explainer)
+    })
 
-    const svg = document.getElementById('background');
-    
-    svg.innerHTML =
-        `<defs>
+    document.getElementById('rnbo-root').appendChild(column)
+
+    const svg = document.getElementById('background')
+
+    svg.innerHTML = `<defs>
             <pattern id="polka-dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
                 
             <g transform="scale(0.3 0.3) translate(150 50)">
@@ -73,30 +69,34 @@ const displayObtrusiveErrors = (errors) => {
             </pattern>
         </defs>
     
-        <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)"></rect>`;
-};
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)"></rect>`
+}
 
 const checkIfLocationIsFileURL = (errors) => {
     if (window.location.protocol === 'file:') {
         errors.push({
             header: 'file:// access not supported',
-            description: 'In order for RNBO to work in the browser, the device has to be served' +
-            ' from a web server. That means that you can\'t just double-click the' +
-            ' index.html file. Check out README.md for instructions on how to run' +
-            ' a static web server.'
-        });
+            description:
+                'In order for RNBO to work in the browser, the device has to be served' +
+                " from a web server. That means that you can't just double-click the" +
+                ' index.html file. Check out README.md for instructions on how to run' +
+                ' a static web server.',
+        })
     }
-};
+}
 
 const guardrails = (errorContext) => {
     if (errorContext) {
-        const finalErrorContext = Object.assign({
-            header: `Error during setup`,
-            description: `${errorContext.error}`
-        }, errorContext);
-        guardrailsErrors.push(finalErrorContext);
+        const finalErrorContext = Object.assign(
+            {
+                header: `Error during setup`,
+                description: `${errorContext.error}`,
+            },
+            errorContext,
+        )
+        guardrailsErrors.push(finalErrorContext)
     }
 
-    checkIfLocationIsFileURL(guardrailsErrors);
-    displayObtrusiveErrors(guardrailsErrors);
+    checkIfLocationIsFileURL(guardrailsErrors)
+    displayObtrusiveErrors(guardrailsErrors)
 }

@@ -2,8 +2,8 @@
 	"name" : "boop-lab",
 	"version" : 1,
 	"creationdate" : 3822655160,
-	"modificationdate" : 3822655317,
-	"viewrect" : [ 25.0, 134.0, 1502.0, 874.0 ],
+	"modificationdate" : 3822664597,
+	"viewrect" : [ 130.0, 282.0, 322.0, 383.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -16,20 +16,19 @@
 				"toplevel" : 1,
 				"singleton" : 				{
 					"bootpath" : "~/GitHub/boop-lab/max/boop-lab",
-					"projectrelativepath" : "../max/boop-lab"
+					"projectrelativepath" : "."
 				}
 
 			}
 ,
-			"New File.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1,
-				"singleton" : 				{
-					"bootpath" : "~/GitHub/boop-lab/max/boop-lab",
-					"projectrelativepath" : "../max/boop-lab"
-				}
-
+			"first.rnbopat" : 			{
+				"kind" : "rnbopat",
+				"local" : 1
 			}
+
+		}
+,
+		"data" : 		{
 
 		}
 
