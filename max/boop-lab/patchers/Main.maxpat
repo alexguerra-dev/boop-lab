@@ -10,67 +10,43 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 484.0, 275.0, 1434.0, 846.0 ],
+		"rect" : [ 59.0, 162.0, 1609.0, 846.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
 					"autosave" : 1,
-					"id" : "obj-12",
+					"id" : "obj-15",
 					"inletInfo" : 					{
 						"IOInfo" : [  ]
 					}
 ,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 1,
+					"numoutlets" : 2,
 					"outletInfo" : 					{
-						"IOInfo" : [  ]
+						"IOInfo" : [ 							{
+								"type" : "signal",
+								"index" : 1,
+								"tag" : "out1",
+								"comment" : ""
+							}
+ ]
 					}
 ,
-					"outlettype" : [ "list" ],
-					"patcher" : 					{
-						"fileversion" : 1,
-						"appversion" : 						{
-							"major" : 9,
-							"minor" : 0,
-							"revision" : 4,
-							"architecture" : "x64",
-							"modernui" : 1
+					"outlettype" : [ "signal", "list" ],
+					"patching_rect" : [ 399.925264120101929, 158.865251541137695, 192.0, 22.0 ],
+					"rnboattrcache" : 					{
+						"gain" : 						{
+							"label" : "gain",
+							"isEnum" : 0,
+							"parsestring" : ""
 						}
 ,
-						"classnamespace" : "rnbo",
-						"rect" : [ 484.0, 275.0, 1434.0, 846.0 ],
-						"default_fontname" : "Lato",
-						"gridsize" : [ 15.0, 15.0 ],
-						"title" : "untitled",
-						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "signal", "signal" ],
-									"patching_rect" : [ 212.0, 390.269999999999982, 59.0, 23.0 ],
-									"rnbo_classname" : "cycle~",
-									"rnbo_extra_attributes" : 									{
-										"index" : "freq",
-										"interp" : "linear",
-										"buffername" : "RNBODefaultSinus"
-									}
-,
-									"rnbo_serial" : 1,
-									"rnbo_uniqueid" : "cycle~_obj-1",
-									"text" : "cycle~"
-								}
-
-							}
- ],
-						"lines" : [  ],
-						"originid" : "pat-12"
-					}
-,
-					"patching_rect" : [ 302.810000000000002, 215.759999999999991, 40.0, 22.0 ],
-					"rnboattrcache" : 					{
+						"frequency" : 						{
+							"label" : "frequency",
+							"isEnum" : 0,
+							"parsestring" : ""
+						}
 
 					}
 ,
@@ -90,7 +66,7 @@
 					"saved_object_attributes" : 					{
 						"optimization" : "O1",
 						"parameter_enable" : 1,
-						"uuid" : "405ec9dd-ed63-11ef-89dd-acde48001122"
+						"uuid" : "b756b8e3-ed63-11ef-b8e3-acde48001122"
 					}
 ,
 					"snapshot" : 					{
@@ -103,7 +79,11 @@
 						"subtype" : "Undefined",
 						"embed" : 1,
 						"snapshot" : 						{
-							"__presetid" : "405ec9dd-ed63-11ef-89dd-acde48001122"
+							"gain" : 							{
+								"value" : 0.5
+							}
+,
+							"__presetid" : "first.rnbopat"
 						}
 ,
 						"snapshotlist" : 						{
@@ -112,21 +92,25 @@
 									"filetype" : "C74Snapshot",
 									"version" : 2,
 									"minorversion" : 0,
-									"name" : "untitled",
-									"origin" : "405ec9dd-ed63-11ef-89dd-acde48001122",
+									"name" : "first.rnbopat",
+									"origin" : "first.rnbopat",
 									"type" : "rnbo",
 									"subtype" : "",
 									"embed" : 0,
 									"snapshot" : 									{
-										"__presetid" : "405ec9dd-ed63-11ef-89dd-acde48001122"
+										"gain" : 										{
+											"value" : 0.5
+										}
+,
+										"__presetid" : "first.rnbopat"
 									}
 ,
 									"fileref" : 									{
-										"name" : "untitled",
-										"filename" : "untitled.maxsnap",
+										"name" : "first.rnbopat",
+										"filename" : "first.rnbopat.maxsnap",
 										"filepath" : "~/GitHub/boop-lab/max/boop-lab/data",
 										"filepos" : -1,
-										"snapshotfileid" : "de40b89061a2666399c99b0006c672a6"
+										"snapshotfileid" : "64ae5d127ad5b45f7a50e514b78c6f8f"
 									}
 
 								}
@@ -135,7 +119,7 @@
 
 					}
 ,
-					"text" : "rnbo~",
+					"text" : "rnbo~ @patchername first.rnbopat",
 					"varname" : "rnbo~"
 				}
 
@@ -171,7 +155,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 570.0934898853302, 330.841140031814575, 22.0, 140.0 ]
+					"patching_rect" : [ 569.925264120101929, 330.630865529179573, 22.0, 140.0 ]
 				}
 
 			}
@@ -235,8 +219,31 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"order" : 1,
 					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 0,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-9", 1 ]
 				}
 
 			}
@@ -248,9 +255,9 @@
 
 			}
  ],
-		"originid" : "pat-6",
+		"originid" : "pat-28",
 		"parameters" : 		{
-			"obj-12" : [ "rnbo~", "rnbo~", 0 ],
+			"obj-15" : [ "rnbo~", "rnbo~", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
@@ -264,7 +271,14 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "untitled.maxsnap",
+				"name" : "first.rnbopat",
+				"bootpath" : "~/GitHub/boop-lab/max/boop-lab/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "RBOP",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "first.rnbopat.maxsnap",
 				"bootpath" : "~/GitHub/boop-lab/max/boop-lab/data",
 				"patcherrelativepath" : "../data",
 				"type" : "mx@s",

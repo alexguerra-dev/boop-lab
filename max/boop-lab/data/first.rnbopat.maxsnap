@@ -1,0 +1,18 @@
+{
+	"filetype" : "C74Snapshot",
+	"version" : 2,
+	"minorversion" : 0,
+	"name" : "first.rnbopat",
+	"origin" : "first.rnbopat",
+	"type" : "rnbo",
+	"subtype" : "",
+	"embed" : 0,
+	"snapshot" : 	{
+		"gain" : 		{
+			"value" : 0.5
+		}
+,
+		"__presetid" : "first.rnbopat"
+	}
+
+}
